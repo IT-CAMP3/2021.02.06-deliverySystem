@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <script src="/jquery.js"></script>
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="supervisor/fragments.html :: menu"></div>
+<form method="post" class="generic-form">
+    <input type="text" placeholder="Imie" th:field="*{newUser.name}">
+    <input type="text" placeholder="Nazwisko" th:field="*{newUser.surname}">
+    <select name="role">
+        <option th:each="role : ${T(pl.camp.it.delivery.system.model.User.Role).values()}"
+                th:value="${role}" th:text="${role.displayValue}"></option>
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>

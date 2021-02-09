@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <script src="/jquery.js"></script>
+</head>
+<body>
+<div th:replace="fragments.html :: logo"/>
+
+<form class="generic-form" method="post">
+    <div>Nadawca</div>
+    <input type="text" placeholder="Imie" th:field="*{sendShipping.sender.name}">
+    <input type="text" placeholder="Nazwisko" th:field="*{sendShipping.sender.surname}">
+    <input type="text" placeholder="Ulica" th:field="*{sendShipping.sender.street}">
+    <input type="text" placeholder="Nr domu / nr mieszkania" th:field="*{sendShipping.sender.no}">
+    <input type="text" placeholder="Kod pocztowy" th:field="*{sendShipping.sender.postCode}">
+    <input type="text" placeholder="Miasto" th:field="*{sendShipping.sender.city}">
+
+    <div>Odbiorca</div>
+    <input type="text" placeholder="Imie" th:field="*{sendShipping.receiver.name}">
+    <input type="text" placeholder="Nazwisko" th:field="*{sendShipping.receiver.surname}">
+    <input type="text" placeholder="Ulica" th:field="*{sendShipping.receiver.street}">
+    <input type="text" placeholder="Nr domu / nr mieszkania" th:field="*{sendShipping.receiver.no}">
+    <input type="text" placeholder="Kod pocztowy" th:field="*{sendShipping.receiver.postCode}">
+    <input type="text" placeholder="Miasto" th:field="*{sendShipping.receiver.city}">
+
+    <input type="submit" value="Nadaj">
+</form>
+</body>
+</html>

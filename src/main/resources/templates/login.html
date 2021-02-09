@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <script src="/validators.js"></script>
+    <script src="/jquery.js"></script>
+</head>
+<body>
+<div th:replace="fragments.html :: logo"/>
+<form method="post" id="login-form" class="generic-form" onsubmit="return validateLoginData()">
+    <input type="text" placeholder="Login" th:field="*{loginObject.login}" id="login-input">
+    <input type="password" placeholder="Hasło" th:field="*{loginObject.password}" id="pass-input">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>

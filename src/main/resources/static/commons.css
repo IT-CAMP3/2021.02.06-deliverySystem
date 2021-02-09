@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/********************* LOGO CSS **************************/
+#logo {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 10px 0;
+    height: 100px;
+    border-bottom: 2px solid gray;
+}
+
+#logo img {
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#logo div {
+    display: inline-block;
+    margin: 0 0 0 40px;
+    padding: 0;
+    color: red;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+/***************************** FORMS CSS *****************************/
+.generic-form {
+    width: 600px;
+    margin: 50px auto;
+    padding: 0;
+    text-align: center;
+}
+
+.generic-form div {
+    display: block;
+    font-size: 24px;
+    color: gray;
+}
+
+.generic-form input {
+    display: block;
+    width: 90%;
+    margin: 15px auto;
+    font-size: 20px;
+    color: gary;
+    text-align: center;
+}
+
+.invalid {
+    background: red;
+}
+
+/************************************ MENU *****************************/
+#menu {
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: gray;
+    padding: 2px 10px;
+    border-right: 1px solid gray;
+    display: inline-block;
+    transition: color 0.5s;
+}
+
+#menu a:hover {
+    color: red;
+}
+
+#first {
+    border-left: 1px solid gray;
+}

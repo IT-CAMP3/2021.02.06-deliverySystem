@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <script src="/jquery.js"></script>
+    <link rel="stylesheet" href="/supervisor-add-user-report.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="supervisor/fragments.html :: menu"></div>
+<div id="report">
+    <div th:text="${'Login: ' + login}"></div>
+    <div th:text="${'Hasło: ' + pass}"></div>
+</div>
+</body>
+</html>

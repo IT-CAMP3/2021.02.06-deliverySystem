@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header(links, scripts)">
+
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <script src="/jquery.js"></script>
+
+    <!--/* This is a laceholder for additional links */-->
+    <th:block th:if="${links} != null" th:replace="${links}"/>
+    <!--/* This is a laceholder for additional scripts */-->
+    <th:block th:if="${scripts} != null" th:replace="${scripts}"/>
+
+</head>
+<body>
+<div id="logo" th:fragment="logo">
+    <img src="https://cdn.pixabay.com/photo/2020/02/06/16/03/mockup-4824767_960_720.jpg" alt="logo"/>
+    <div>DEHAEL delivery</div>
+</div>
+</body>
+</html>

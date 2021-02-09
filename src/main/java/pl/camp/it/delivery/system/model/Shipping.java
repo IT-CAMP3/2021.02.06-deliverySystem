@@ -1,16 +1,26 @@
 package pl.camp.it.delivery.system.model;
 
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
+@Entity(name = "tshipping")
 public class Shipping {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(unique = true)
     private int shippingNumber;
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private DeliveryAddress sender;
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private DeliveryAddress recipient;
+    @Enumerated(EnumType.STRING)
     private ShippingStatus status;
     private double weight;
     private int price;
-    private Set<ShippingPoint> shippingPoints;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<ShippingPoint> shippingPoints = new HashSet<>();
 
     public Shipping() {
     }

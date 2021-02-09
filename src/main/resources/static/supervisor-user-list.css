@@ -1,0 +1,52 @@
+#user-list {
+    margin: 15px 0;
+    color: gray;
+}
+
+#user-list > div {
+    width: 80%;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+    transition: border 0.5s;
+}
+
+#user-list > div:hover {
+    border: 1px solid red;
+}
+
+#user-list > div:hover > .user-login {
+    display: inline-block;
+}
+
+#user-list > div:hover > .user-role {
+    display: inline-block;
+}
+
+.user-name {
+    display: inline-block;
+    font-size: 28px;
+}
+
+.user-surname {
+    display: inline-block;
+    font-size: 28px;
+}
+
+.separator {
+    display: block;
+}
+
+.user-login {
+    margin-top: 15px;
+    display: none;
+    font-size: 24px;
+}
+
+.user-role {
+    margin-left: 50px;
+    margin-top: 15px;
+    display: none;
+    font-size: 24px;
+}

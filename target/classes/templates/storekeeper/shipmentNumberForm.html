@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <script src="/jquery.js"></script>
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="storekeeper/fragments.html :: menu"></div>
+<form method="post" class="generic-form">
+    <input type="text" placeholder="Nr paczki" name="number">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>

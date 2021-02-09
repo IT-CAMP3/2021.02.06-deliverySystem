@@ -1,17 +1,24 @@
 package pl.camp.it.delivery.system.model;
 
+import javax.persistence.*;
+
+@Entity(name = "tuser")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(unique = true)
     private String login;
-    private String pass;
+    private String pass = "";
     private String name;
     private String surname;
-    private ROLE role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public User() {
     }
 
-    public User(int id, String login, String pass, String name, String surname, ROLE role) {
+    public User(int id, String login, String pass, String name, String surname, Role role) {
         this.id = id;
         this.login = login;
         this.pass = pass;
@@ -60,16 +67,27 @@ public class User {
         this.surname = surname;
     }
 
-    public ROLE getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(ROLE role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
-    public enum ROLE {
-        STOREKEEPER,
-        COURIER
+    public enum Role {
+        STOREKEEPER("Magazynier"),
+        COURIER("Kurier"),
+        SUPERVISOR("Kierownik");
+
+        private String displayValue;
+
+        Role(String displayValue) {
+            this.displayValue = displayValue;
+        }
+
+        public String getDisplayValue() {
+            return displayValue;
+        }
     }
 }

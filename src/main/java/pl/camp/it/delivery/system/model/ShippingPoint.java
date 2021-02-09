@@ -1,12 +1,18 @@
 package pl.camp.it.delivery.system.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity(name = "tshippingpoint")
 public class ShippingPoint {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
     private LocalDateTime dateTime;
     private String city;
+    @Enumerated(EnumType.STRING)
     private ShippingStatus newStatus;
 
     public ShippingPoint() {

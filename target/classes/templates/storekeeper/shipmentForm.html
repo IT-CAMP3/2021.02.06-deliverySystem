@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <script src="/jquery.js"></script>
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="storekeeper/fragments.html :: menu"></div>
+<form method="post" class="generic-form">
+    <div th:text="${'Numer paczki: ' + shipping.shippingNumber}"></div>
+    <div>
+        <div>Nadawca:</div>
+        <div th:text="${shipping.sender.name + ' ' + shipping.sender.surname}"></div>
+        <div th:text="${shipping.sender.street + ' ' + shipping.sender.no}"></div>
+        <div th:text="${shipping.sender.postCode + ' ' + shipping.sender.city}"></div>
+    </div>
+    <div>
+        <div>Odbiorca:</div>
+        <div th:text="${shipping.recipient.name + ' ' + shipping.recipient.surname}"></div>
+        <div th:text="${shipping.recipient.street + ' ' + shipping.recipient.no}"></div>
+        <div th:text="${shipping.recipient.postCode + ' ' + shipping.recipient.city}"></div>
+    </div>
+    <input type="text" placeholder="Waga" name="weight">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>

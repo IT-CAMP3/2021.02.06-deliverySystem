@@ -1,6 +1,16 @@
 package pl.camp.it.delivery.system.model;
 
+import com.sun.xml.bind.v2.model.core.ID;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "tdeliveryaddress")
 public class DeliveryAddress {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String surname;

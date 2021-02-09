@@ -1,8 +1,8 @@
 package pl.camp.it.delivery.system.model;
 
 public enum ShippingStatus {
-    SHIPMENT,
-    SENDING,
+    SHIP,
+    SENT,
     TRANSPORTATION,
     DELIVERY,
     DONE

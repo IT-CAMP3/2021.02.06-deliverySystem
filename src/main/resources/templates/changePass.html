@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <script src="/jquery.js"></script>
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:if="${user.role.name() == 'SUPERVISOR'}">
+    <div th:replace="supervisor/fragments.html :: menu"></div>
+</div>
+<div th:if="${user.role.name() == 'STOREKEEPER'}">
+    <div th:replace="storekeeper/fragments.html :: menu"></div>
+</div>
+<form method="post" class="generic-form">
+    <input type="password" placeholder="Hasło" th:field="*{changePass.currentPass}">
+    <input type="password" placeholder="Nowe hałso" th:field="*{changePass.newPass}">
+    <input type="password" placeholder="Powtórz nowe hasło" th:field="*{changePass.repeatedNewPass}">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>

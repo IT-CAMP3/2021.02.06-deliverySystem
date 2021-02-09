@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DEHAEL</title>
+    <link rel="stylesheet" href="/commons.css">
+    <link rel="stylesheet" href="/supervisor-user-list.css">
+    <script src="/jquery.js"></script>
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="supervisor/fragments.html :: menu"></div>
+<div id="user-list">
+    <div th:each="user : ${userList}">
+        <div th:text="${user.name}" class="user-name"></div>
+        <div th:text="${user.surname}" class="user-surname"></div>
+        <div class="separator"></div>
+        <div th:text="${'Login: ' + user.login}" class="user-login"></div>
+        <div th:text="${'Rola: ' + user.role.displayValue}" class="user-role"></div>
+    </div>
+</div>
+</body>
+</html>
